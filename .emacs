@@ -1,6 +1,11 @@
+;;desabilitar el scroll bar, toolbar y menu bar
+;;(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
 (custom-set-variables
  '(case-fold-search t)
- '(current-language-environment "ASCII")
+ '(current-language-environment "UTF-8")
  '(make-backup-files nil)
  '(mouse-wheel-mode t nil (mwheel))
  '(show-paren-mode t nil (paren))
@@ -12,6 +17,15 @@
 (setq auto-save-default nil)
 
 
+;;Color themes
+(add-to-list 'load-path "/Users/naruse/.emacs.d/color-theme-6.6.0/color-theme.el")
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-dark-laptop)))
+
+
 (line-number-mode 1)
 (column-number-mode 1)
 
@@ -21,11 +35,6 @@
 
 (global-set-key [(meta g)] 'goto-line)
 (define-key global-map "\M-4" 'query-replace)
-
-;;desabilitar el scroll bar, toolbar y menu bar
-;;(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; Otras cosas
 
