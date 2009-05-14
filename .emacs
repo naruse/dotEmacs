@@ -16,10 +16,25 @@
 ;; no autograbe
 (setq auto-save-default nil)
 
+
 ;; this is me
 (setq user-mail-address "naruse@gmail.com")
 (setq user-full-name "Juan Sebastian Muñoz")
 
+;; nice fonts in OS X
+(setq mac-allow-anti-aliasing t)
+
+; interpret and use ansi color codes in shell output windows
+(ansi-color-for-comint-mode-on)
+
+;; use y/n instead of yes/no
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; nice parentheses 
+(show-paren-mode t)                  
+(setq show-paren-style 'expression) 
+;; text mate mode for emacs
+(add-to-list 'load-path "/Users/naruse/.emacs.d/textmate.el")
 
 ;;Color themes
 (add-to-list 'load-path "/Users/naruse/.emacs.d/color-theme-6.6.0/color-theme.el")
