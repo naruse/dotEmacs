@@ -13,8 +13,12 @@
  '(transient-mark-mode t)
  '(visible-bell t)
 )
-
+;; no autograbe
 (setq auto-save-default nil)
+
+;; this is me
+(setq user-mail-address "naruse@gmail.com")
+(setq user-full-name "Juan Sebastian Muñoz")
 
 
 ;;Color themes
